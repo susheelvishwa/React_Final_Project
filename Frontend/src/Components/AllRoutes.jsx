@@ -3,6 +3,7 @@ import Home from "../Pages/Home";
 import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import Login from "../Pages/Login";
+import Tickets from "../Pages/Tickets";
 
 
 const AllRoutes = () => {
@@ -12,6 +13,7 @@ const AllRoutes = () => {
       <Route path="/About" element={<About />} />
       <Route path="/Contact" element={<Contact />} />
       <Route path="/Login" element={<Login />} />
+      <Route path="/Tickets" element={<Tickets/>} />
     </Routes>
   );
 };

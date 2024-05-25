@@ -1,14 +1,13 @@
-
 import { Box, Heading } from "@chakra-ui/react";
 
-const Home = () => {
+const Tickets = () => {
   return (
     <Box>
       <Heading as="h1" size="xl">
-        This is a Home page
+        TICKETS
       </Heading>
     </Box>
   );
-}
+};
 
-export default Home
+export default Tickets;

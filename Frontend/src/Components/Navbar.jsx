@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link as ReactRouterLink } from "react-router-dom";
+import {  Link as ChakraLink, Flex } from "@chakra-ui/react";
 
 const links = [
   {
@@ -17,17 +18,31 @@ const links = [
     to: "/contact",
     label: "CONTACT",
   },
+  {
+    to: "tickets",
+    label:"TICKETS"
+  }
 ];
 
 const Navbar = () => {
   return (
-    <>
+    <Flex
+      justify={"space-around"}
+      alignItems={"center"}
+      backgroundColor={"gray.200"}
+      padding={4}
+    >
       {links.map((link) => (
-        <Link key={link.to} to={link.to}>
+        <ChakraLink
+          as={ReactRouterLink}
+          color="red.400"
+          key={link.to}
+          to={link.to}
+        >
           {link.label}
-        </Link>
+        </ChakraLink>
       ))}
-    </>
+    </Flex>
   );
 };
 
