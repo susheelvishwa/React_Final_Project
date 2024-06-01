@@ -1,14 +1,16 @@
 import { Heading, Input, Button, VStack, Container } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
+import { AuthContext } from "../context/AuthContextProvider";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { login } = useContext(AuthContext);
+
   async function handleClick() {
-      try {
-        
+    try {
       let res = await axios({
         method: "post",
         url: "https://reqres.in/api/login",
@@ -17,8 +19,8 @@ const Login = () => {
           password,
         },
       });
-          
-    console.log(res);
+
+      login(res?.data?.token);
     } catch (error) {
       console.log(error);
     }

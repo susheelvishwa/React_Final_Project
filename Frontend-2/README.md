@@ -3,10 +3,13 @@
   - work on home page - `useNavigate()` from `react-router-dom`
   - work on login page - Axios  - Make a post request and login user.
   - now working on Login page
+  - Setup AuthContext, Save token in AuthContext, Implement Login and
+Logout functionality in application
+  - now time to impliment privete routing
 
-  ![Alt text](./Frontend-1/src/assets/image.png)
+  ![Alt text](./src/assets/image7.png)
 
-  --------------------------------------------------------------------------
+  -------------------------------------------------------------------------
 
 ># Navigation in React with `react-router-dom`
 
