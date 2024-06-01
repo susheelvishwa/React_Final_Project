@@ -5,7 +5,7 @@
   - now working on Login page
   - Setup AuthContext, Save token in AuthContext, Implement Login and
 Logout functionality in application
-  - now time to impliment privete routing
+  - Setup Protected Routes or Private Routes Implement Private Routes
 
   ![Alt text](./src/assets/image7.png)
 

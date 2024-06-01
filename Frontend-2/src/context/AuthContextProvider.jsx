@@ -1,10 +1,7 @@
 import { createContext, useState } from "react";
-
 //CPC
-
 //step 1
 export const AuthContext = createContext();
-
 // step 2A
 export function AuthContextProvider({ children }) {
   const [authDetails, setAuthDetails] = useState({

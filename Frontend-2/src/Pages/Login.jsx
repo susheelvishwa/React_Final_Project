@@ -1,13 +1,22 @@
-import { Heading, Input, Button, VStack, Container } from "@chakra-ui/react";
+import {
+  Heading,
+  Input,
+  Button,
+  VStack,
+  Container,
+  useToast,
+} from "@chakra-ui/react";
 import { useState, useContext } from "react";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContextProvider";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate(); // Corrected this line
   const { login } = useContext(AuthContext);
+  const toast = useToast();
 
   async function handleClick() {
     try {
@@ -21,8 +30,27 @@ const Login = () => {
       });
 
       login(res?.data?.token);
+
+      toast({
+        title: "Login Successful",
+        description: "welcome shivam",
+        status: "success",
+        duration: 2000, 
+        isClosable: true,
+      });
+
+      setTimeout(() => {
+        navigate(`/about`);
+      }, 1000); 
     } catch (error) {
       console.log(error);
+      toast({
+        title: "Login Failed",
+        description: "Please check your credentials",
+        status: "error",
+        duration: 2000,
+        isClosable: true,
+      });
     }
   }
 
@@ -36,7 +64,7 @@ const Login = () => {
     >
       <VStack spacing={6}>
         <Heading as="h1" size="xl">
-          Login page
+          Login Page
         </Heading>
 
         <Input
