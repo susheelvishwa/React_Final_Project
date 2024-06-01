@@ -42,6 +42,7 @@ const Login = () => {
       setTimeout(() => {
         navigate(`/about`);
       }, 1000); 
+      
     } catch (error) {
       console.log(error);
       toast({

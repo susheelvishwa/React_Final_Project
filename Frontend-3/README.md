@@ -1,58 +1,37 @@
-># Frontend 2
+# Frontend 3
 
-  - work on home page - `useNavigate()` from `react-router-dom`
-  - work on login page - Axios  - Make a post request and login user.
-  - now working on Login page
-  - Setup AuthContext, Save token in AuthContext, Implement Login and
-Logout functionality in application
-  - Setup Protected Routes or Private Routes Implement Private Routes
+# Tickets Page
 
-  ![Alt text](./src/assets/image7.png)
+## Create Ticket Button
+- Positioned at the top right corner.
+- Redirects to the Ticket Create page.
 
-  -------------------------------------------------------------------------
+## Ticket Cards
+- Displayed in a grid layout.
+  - **Large Screens and Above**: 3 cards per row.
+  - **Medium Screens and Above**: 2 cards per row.
+  - **Small Screens**: 1 card per row.
+- Each card includes:
+  - **Title**: [Ticket Title]
+  - **Status**: [Ticket Status]
+  - **Priority**: [Ticket Priority]
+  - **View Button**: Redirects to the Ticket View page.
 
-># Navigation in React with `react-router-dom`
+## Sorting and Filtering Options
 
-## Introduction to `react-router-dom`
-`react-router-dom` is a library used in React applications for routing. It provides various components and hooks to navigate between different pages or views in a React app.
+### Sort by Priority
+- Options: 
+  - Low to High
+  - High to Low
 
-## Using the `Link` Component
+### Filter by Status
+- Options: 
+  - Pending
+  - Progress
+  - Completed
 
-The `Link` component is used to create navigational links in your application. When clicked, it navigates to a specified route without refreshing the entire page.
-
-### Example
-```jsx
-import { Link } from 'react-router-dom';
-
-function HomePage() {
-  return (
-    <div>
-      <h1>Home Page</h1>
-      <Link to="/about">Go to About Page</Link>
-    </div>
-  );
-}
-
-## Summary
-
-### `Link` Component:
-
-- **Purpose**: To create navigational links.
-- **Use Case**: When you want to navigate to a different page via user interaction with a link.
-- **Example**: 
-
-  <Link to="/about">Go to About Page</Link>
-```
-
-
-### `useNavigate` Hook:
-
-- **Purpose**: To programmatically navigate between routes.
-- **Use Case**: When you need to perform additional operations or checks before navigating.
-- **Example**:
-    ```jsx
-    const navigate = useNavigate();
-    navigate('/about');
-    ```
-
-By using both `Link` and `useNavigate`, you can handle navigation in your React application both declaratively (with links) and imperatively (with functions).
+## Functional Behavior
+- **Create Ticket Button**: Redirects to the Ticket Create page.
+- **View Button**: Redirects to the Ticket View page.
+- **Sort by Priority**: Rearranges tickets based on selected priority.
+- **Filter by Status**: Displays tickets matching the selected status.
