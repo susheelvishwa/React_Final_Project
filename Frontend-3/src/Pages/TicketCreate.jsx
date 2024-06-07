@@ -1,7 +1,5 @@
-import React from 'react'
-
 const TicketCreate = () => {
-  return <div>TicketCreate</div>;
+  return <div>Ticket Create</div>;
 }
 
 export default TicketCreate
