@@ -14,8 +14,9 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Corrected this line
+  const navigate = useNavigate();
   const { login } = useContext(AuthContext);
+  
   const toast = useToast();
 
   async function handleClick() {

@@ -59,7 +59,7 @@ const Tickets = () => {
     <Container maxW="container.xl" marginTop="20px" paddingRight="50px">
       <Flex direction="row-reverse">
         <Button variant="outline" colorScheme="red">
-          Create Tickets
+          create new tickets
         </Button>
       </Flex>
     </Container>

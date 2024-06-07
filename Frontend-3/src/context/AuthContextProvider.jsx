@@ -11,14 +11,14 @@ export function AuthContextProvider({ children }) {
 
   const login = (token) => {
     setAuthDetails({
-      isLoggedIn: false,
+      isLoggedIn: true,
       token: token,
     })
   }
 
   const logout = () => {
     setAuthDetails({
-      isLoggedIn: true,
+      isLoggedIn: false,
       token: null,
     });
   };

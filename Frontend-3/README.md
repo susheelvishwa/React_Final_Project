@@ -1,5 +1,10 @@
 # Frontend 3
 
+```
+starting 11 min talking about after clicking the button how to redirect the page
+Example After clicking login button Redirect the Home page
+```
+
 # Tickets Page
 
 ## Create Ticket Button
