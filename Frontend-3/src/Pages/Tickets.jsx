@@ -2,13 +2,6 @@ import {
   Button,
   Flex,
   Container,
-  Card,
-  CardHeader,
-  CardBody,
-  Heading,
-  Stack,
-  StackDivider,
-  Text,
   Box,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
@@ -16,61 +9,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import ErrorIndicator from "../Components/ErrorIndicator";
 import LoadingIndicator from "../Components/LoadingIndicator";
+import TicketCard from "../Components/TicketCard";
 
-function TicketCard({ title, status, priority, description, name }) {
-
-  const navigate = useState();
-
-  return (
-    <Card>
-      <CardHeader>
-        <Heading size="md">{title}</Heading>
-      </CardHeader>
-
-      <CardBody>
-        <Stack divider={<StackDivider />} spacing="4">
-          <Box>
-            <Heading size="xs" textTransform="uppercase">
-              Status
-            </Heading>
-            <Text pt="2" fontSize="sm">
-              {status}
-            </Text>
-          </Box>
-          <Box>
-            <Heading size="xs" textTransform="uppercase">
-              Priority
-            </Heading>
-            <Text pt="2" fontSize="sm">
-              {priority}
-            </Text>
-          </Box>
-          <Box>
-            <Heading size="xs" textTransform="uppercase">
-              Description
-            </Heading>
-            <Text pt="2" fontSize="sm">
-              {description}
-            </Text>
-          </Box>
-          <Box>
-            <Heading size="xs" textTransform="uppercase">
-              Assigned To
-            </Heading>
-            <Text pt="2" fontSize="sm">
-              {name}
-            </Text>
-          </Box>
-          <Box>
-            <Button onClick={() => navigate (`/ticket/view/${title}}`)}>
-              View
-            </Button>
-          </Box>
-        </Stack>
-      </CardBody>
-    </Card>
-  );
-}
 
 const Tickets = () => {
   const navigate = useNavigate();
