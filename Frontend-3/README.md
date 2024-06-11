@@ -7,11 +7,11 @@ Example After clicking login button Redirect the Home page
 
 # Tickets Page
 
-## Create Ticket Button
+## Create Ticket Button (complete)
 - Positioned at the top right corner.
 - Redirects to the Ticket Create page.
 
-## Ticket Cards
+## Ticket Cards (complete)
 - Displayed in a grid layout.
   - **Large Screens and Above**: 3 cards per row.
   - **Medium Screens and Above**: 2 cards per row.

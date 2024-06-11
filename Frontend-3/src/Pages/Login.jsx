@@ -23,7 +23,7 @@ const Login = () => {
     try {
       let res = await axios({
         method: "post",
-        url: "https://reqres.in/api/login",
+        url: "https://jade-protective-quiet.glitch.me",
         data: {
           email,
           password,
