@@ -6,7 +6,7 @@
       "description": "Implement a logout feature in the navbar for user authentication.",
       "name": "Shivam",
       "status": "pending",
-      "priority": 0
+      "priority": 5
     },
     {
       "id": 2,
@@ -79,6 +79,22 @@
       "name": "Abhay",
       "status": "pending",
       "priority": 9
+    },
+    {
+      "id": 11,
+      "title": "Set Up and Configure Database",
+      "description": "Design and implement the database schema, configure the database server, and ensure data integrity and security.",
+      "name": "Susheel",
+      "status": "progress",
+      "priority": 1
+    },
+    {
+      "id": 12,
+      "title": "Implement Comprehensive Testing Framework",
+      "description": "Develop and integrate a testing framework to ensure all application components are thoroughly tested",
+      "name": "Aushi",
+      "status": "progress",
+      "priority": 2
     }
   ]
 }
