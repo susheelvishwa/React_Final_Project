@@ -12,17 +12,46 @@ const Tickets = () => {
   const [error, setError] = useState(false);
   const [tickets, setTickets] = useState([]);
   const [sortOrderValue, setSortOrderValue] = useState("");
+  const [filterValue, setFilterValue] = useState("");
 
-  async function fetchAndUpdateData(sortOrderValue) {
+  async function fetchAndUpdateData(sortOrderValue, filterValue) {
     setLoading(true);
+    // try {
+    //   const res = await axios({
+    //     method: "get",
+    //     url: `http://localhost:3000/tickets?_status=${filterValue}&_sort=priority&_order=${sortOrderValue}`,
+    //   });
+    //   const data = res?.data;
+    //   // console.log(data);
+    //   setTickets(data);
+    //   setLoading(false);
+    // } catch (error) {
+    //   console.error("Something went Wrong", error);
+    //   setLoading(false);
+    //   setError(true);
+    // }
+
+
     try {
-      const res = await axios.get(
-        `http://localhost:3000/tickets?_sort=priority&_order={sortOrderValue}`
-      );
-      const data = res?.data;
-      // console.log(data);
-      setTickets(data);
+      let queryParams = {};
+      if (filterValue) {
+        queryParams.status = filterValue;
+      }
+
+      if (sortOrderValue) {
+        queryParams._sort = "priority";
+        queryParams.order = sortOrderValue;
+      }
+
+      let res = await axios({
+        method: "get",
+        url: `http://localhost:3000/tickets`,
+        params: queryParams,        
+      });
+
+      let data = res?.data;
       setLoading(false);
+      setTickets(data);
     } catch (error) {
       console.error("Something went Wrong", error);
       setLoading(false);
@@ -31,8 +60,8 @@ const Tickets = () => {
   }
 
   useEffect(() => {
-    fetchAndUpdateData(sortOrderValue);
-  }, [sortOrderValue]);
+    fetchAndUpdateData(sortOrderValue, filterValue);
+  }, [sortOrderValue, filterValue]);
 
   if (loading) {
     return <LoadingIndicator />;
@@ -67,7 +96,9 @@ const Tickets = () => {
           <option value="asc">Low to High</option>
           <option value="desc">High to Low</option>
         </Select>
-        <Select placeholder="Filter by Status">
+        <Select placeholder="Filter by Status" value={filterValue}
+          onChange={(e) => setFilterValue(e.target.value)}
+        >
           <option value="pending">Pending</option>
           <option value="progress">Progress</option>
           <option value="completed">Completed</option>

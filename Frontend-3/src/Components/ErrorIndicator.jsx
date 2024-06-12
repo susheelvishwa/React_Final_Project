@@ -10,7 +10,7 @@ export default function ErrorIndicator() {
     <Alert status="error">
       <AlertIcon />
       <AlertTitle>Error</AlertTitle>
-      <AlertDescription>Something went wrong</AlertDescription>
+      <AlertDescription>Something went wrong ya something</AlertDescription>
     </Alert>
   );
 }
