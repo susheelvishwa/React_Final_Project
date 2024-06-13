@@ -1,7 +1,7 @@
 {
   "tickets": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Navbar Feature - Logout",
       "description": "Implement a logout feature in the navbar for user authentication.",
       "name": "Shivam",
@@ -9,7 +9,7 @@
       "priority": 5
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Dashboard - User Metrics",
       "description": "Create user metrics section in the dashboard.",
       "name": "Vartika",
@@ -17,7 +17,7 @@
       "priority": 5
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Login Page UI",
       "description": "Design the UI for the login page.",
       "name": "Tanu",
@@ -25,7 +25,7 @@
       "priority": 3
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "API Integration - Payment Gateway",
       "description": "Integrate payment gateway API for transactions.",
       "name": "Shriya",
@@ -33,7 +33,7 @@
       "priority": 8
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Bug Fix - User Registration",
       "description": "Fix the bug in the user registration process.",
       "name": "Abhay",
@@ -41,7 +41,7 @@
       "priority": 2
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Email Notification System",
       "description": "Set up an email notification system for user activities.",
       "name": "Prachi",
@@ -49,7 +49,7 @@
       "priority": 6
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Data Migration Script",
       "description": "Write a script to migrate data from the old database.",
       "name": "Ankit",
@@ -57,7 +57,7 @@
       "priority": 1
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Profile Page - Avatar Upload",
       "description": "Allow users to upload avatars on their profile page.",
       "name": "Shivam",
@@ -65,7 +65,7 @@
       "priority": 7
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Search Functionality",
       "description": "Implement search functionality across the platform.",
       "name": "Vartika",
@@ -73,7 +73,7 @@
       "priority": 4
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Footer Update",
       "description": "Update footer with new links and information.",
       "name": "Abhay",
@@ -81,7 +81,7 @@
       "priority": 9
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "Set Up and Configure Database",
       "description": "Design and implement the database schema, configure the database server, and ensure data integrity and security.",
       "name": "Susheel",
@@ -89,12 +89,60 @@
       "priority": 1
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "Implement Comprehensive Testing Framework",
       "description": "Develop and integrate a testing framework to ensure all application components are thoroughly tested",
       "name": "Aushi",
       "status": "progress",
       "priority": 2
+    },
+    {
+      "id": "368d",
+      "title": "User Feedback Collection form",
+      "description": "Create a form for collecting user feedback and suggestion",
+      "assignee": "Shivam",
+      "status": "",
+      "priority": 9
+    },
+    {
+      "id": "00c8",
+      "title": "USer Feedback collection form",
+      "description": "Create a form for collection user feedback and suggestions.",
+      "assignee": "Shivam",
+      "status": "progress",
+      "priority": 9
+    },
+    {
+      "id": "47a5",
+      "title": "Dark mode Feature",
+      "description": "Impliment a dark mode feature",
+      "assignee": "Shivanshu",
+      "status": "progress",
+      "priority": 6
+    },
+    {
+      "id": "f20d",
+      "title": "Parformance optigition",
+      "description": "Optimixe the application for batter performance and fast load times",
+      "assignee": "Vartika",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "id": "4060",
+      "title": "Accessibilty Imporobment",
+      "description": "Enhance accessibilty feture for user with disability",
+      "assignee": "Vartika",
+      "status": "pending",
+      "priority": 5
+    },
+    {
+      "id": "fc22",
+      "title": "Real Time notification",
+      "description": "Impliment the real time Notification for iuser activities and updates",
+      "assignee": "Shriya",
+      "status": "progress",
+      "priority": 5
     }
   ]
 }

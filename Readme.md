@@ -1,8 +1,10 @@
 # React_Final_Project
 
 ># Using the following tools and technologies: React (useState, useContext, useEffect, useRef), Chakra UI, React Router, and Axios, your task is to build a web application with the following features:
-
-
+```
+EmailID : eve.holt@reqres.in
+PAssword : cityslicka
+```
 
 using vite (https://vitejs.dev/guide/)
 
@@ -83,8 +85,45 @@ using vite (https://vitejs.dev/guide/)
   - The authentication token.
 
 
-# eve.holt@reqres.in
-# cityslicka
+-------------------------------------------------------------------
 
----------------------------------------------------------------------------
+># Tickets Page Design Notes
+
+## Overview
+The Tickets Page is designed to allow users to create, view, and manage tickets. This page will feature a button to create new tickets, a grid layout to display existing tickets, and sorting and filtering options to organize the tickets.
+
+## Layout Done
+- **Create Ticket Button**: Positioned at the top right corner, this button redirects users to the Ticket Create page.
+- **Ticket Cards**: Tickets are displayed as cards in a grid layout:
+  - **Large Screens (≥1200px)**: 3 cards per row
+  - **Medium Screens (≥992px)**: 2 cards per row
+  - **Small Screens (<992px)**: 1 card per row
+- **Card Contents**: Each card includes:
+  - Title
+  - Status
+  - Priority
+  - View Button: Redirects to the Ticket View page
+
+## Sorting and Filtering
+- **Sort by Priority**:
+  - "Low to High"
+  - "High to Low"
+- **Filter by Status**:
+  - "Pending"
+  - "Progress"
+  - "Completed"
+
+## Functionality
+- **Create Ticket Button**: When clicked, redirects to the Ticket Create page.
+- **View Button**: Each card's View button redirects to the Ticket View page for that specific ticket.
+- **Sorting and Filtering**: 
+  - Sort tickets by priority based on user selection (either "Low to High" or "High to Low").
+  - Filter tickets by status based on user selection ("Pending", "Progress", "Completed").
+  - The ticket display should update dynamically based on the selected sort and filter criteria.
+
+## Notes
+- Ensure the grid layout adjusts responsively according to the screen size.
+- Implement necessary event handlers for sorting and filtering to dynamically rearrange the ticket cards.
+- Maintain consistency in the UI for a smooth user experience across different devices.
+
 
