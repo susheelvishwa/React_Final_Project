@@ -97,14 +97,6 @@
       "priority": 2
     },
     {
-      "id": "368d",
-      "title": "User Feedback Collection form",
-      "description": "Create a form for collecting user feedback and suggestion",
-      "assignee": "Shivam",
-      "status": "",
-      "priority": 9
-    },
-    {
       "id": "00c8",
       "title": "USer Feedback collection form",
       "description": "Create a form for collection user feedback and suggestions.",
@@ -143,6 +135,14 @@
       "assignee": "Shriya",
       "status": "progress",
       "priority": 5
+    },
+    {
+      "id": "9fcc",
+      "title": "Responsive Disign",
+      "description": "MAke a user frandly responsiv mobile application",
+      "assignee": "Ankit",
+      "status": "progress",
+      "priority": 1
     }
   ]
 }
