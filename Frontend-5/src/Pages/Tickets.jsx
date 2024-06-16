@@ -36,19 +36,18 @@ const Tickets = () => {
     // }
 
     try {
-      let queryParams = {};
+      let url = `https://react-final-project-rouge.vercel.app/tickets?`;
       if (filterValue) {
-        queryParams.status = filterValue;
+        url += `status=${filterValue}&`;
       }
       if (sortOrderValue) {
-        queryParams._sort = (sortOrderValue == "desc" ? "-" : "") + "priority";
+        url += "_sort=priority&_order=" + sortOrderValue;
       }
 
-      console.log("queryParams=", queryParams);
+      console.log("url=", url);
       let res = await axios({
         method: "get",
-        url: `https://react-final-project-rouge.vercel.app/tickets`,
-        params: queryParams,
+        url: url,
       });
 
       let data = res?.data;

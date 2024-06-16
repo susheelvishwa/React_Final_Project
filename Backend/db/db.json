@@ -4,7 +4,7 @@
       "id": "2",
       "title": "Dashboard - User Metrics",
       "description": "Create user metrics section in the dashboard.",
-      "name": "Vartika",
+      "assignee": "Vartika",
       "status": "progress",
       "priority": 5
     },
@@ -12,7 +12,7 @@
       "id": "3",
       "title": "Login Page UI",
       "description": "Design the UI for the login page.",
-      "name": "Tanu",
+      "assignee": "Tanu",
       "status": "completed",
       "priority": 3
     },
@@ -20,7 +20,7 @@
       "id": "4",
       "title": "API Integration - Payment Gateway",
       "description": "Integrate payment gateway API for transactions.",
-      "name": "Shriya",
+      "assignee": "Shriya",
       "status": "pending",
       "priority": 8
     },
@@ -28,7 +28,7 @@
       "id": "5",
       "title": "Bug Fix - User Registration",
       "description": "Fix the bug in the user registration process.",
-      "name": "Abhay",
+      "assignee": "Abhay",
       "status": "progress",
       "priority": 2
     },
@@ -36,7 +36,7 @@
       "id": "6",
       "title": "Email Notification System",
       "description": "Set up an email notification system for user activities.",
-      "name": "Prachi",
+      "assignee": "Prachi",
       "status": "completed",
       "priority": 6
     },
@@ -44,7 +44,7 @@
       "id": "7",
       "title": "Data Migration Script",
       "description": "Write a script to migrate data from the old database.",
-      "name": "Ankit",
+      "assignee": "Ankit",
       "status": "pending",
       "priority": 1
     },
@@ -52,7 +52,7 @@
       "id": "8",
       "title": "Profile Page - Avatar Upload",
       "description": "Allow users to upload avatars on their profile page.",
-      "name": "Shivam",
+      "assignee": "Shivam",
       "status": "progress",
       "priority": 7
     },
@@ -60,7 +60,7 @@
       "id": "9",
       "title": "Search Functionality",
       "description": "Implement search functionality across the platform.",
-      "name": "Vartika",
+      "assignee": "Vartika",
       "status": "completed",
       "priority": 4
     },
@@ -68,7 +68,7 @@
       "id": "10",
       "title": "Footer Update",
       "description": "Update footer with new links and information.",
-      "name": "Abhay",
+      "assignee": "Abhay",
       "status": "pending",
       "priority": 9
     },
@@ -76,7 +76,7 @@
       "id": "11",
       "title": "Set Up and Configure Database",
       "description": "Design and implement the database schema, configure the database server, and ensure data integrity and security.",
-      "name": "Susheel",
+      "assignee": "Susheel",
       "status": "progress",
       "priority": 1
     },
@@ -84,7 +84,7 @@
       "id": "12",
       "title": "Implement Comprehensive Testing Framework",
       "description": "Develop and integrate a testing framework to ensure all application components are thoroughly tested",
-      "name": "Aushi",
+      "assignee": "Aushi",
       "status": "progress",
       "priority": 2
     },
