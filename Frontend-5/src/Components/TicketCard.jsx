@@ -42,7 +42,7 @@ export default function TicketCard({ id, title, status, priority }) {
             <Button
               variant="outline"
               colorScheme="red"
-              onClick={() => navigate(`/ticket/view/${id}}`)}
+              onClick={() => navigate(`/ticket/view/${id}`)}
             >
               View Ticket
             </Button>

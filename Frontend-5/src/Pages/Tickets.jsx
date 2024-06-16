@@ -17,12 +17,16 @@ const Tickets = () => {
   async function fetchAndUpdateData(sortOrderValue, filterValue) {
     setLoading(true);
     // try {
+    //   console.log(
+    //     "url=",
+    //     `http://localhost:3000/tickets?_status=${filterValue}&_sort=priority&_order=${sortOrderValue}`
+    //   );
     //   const res = await axios({
     //     method: "get",
-    //     url: `http://localhost:3000/tickets?_status=${filterValue}&_sort=priority&_order=${sortOrderValue}`,
+    //     url: `http://localhost:3000/tickets?_sort=priority&_order=${sortOrderValue}`,
     //   });
     //   const data = res?.data;
-    //   // console.log(data);
+    //   console.log("data=", data);
     //   setTickets(data);
     //   setLoading(false);
     // } catch (error) {
@@ -31,25 +35,24 @@ const Tickets = () => {
     //   setError(true);
     // }
 
-
     try {
       let queryParams = {};
       if (filterValue) {
         queryParams.status = filterValue;
       }
-
       if (sortOrderValue) {
-        queryParams._sort = "priority";
-        queryParams.order = sortOrderValue;
+        queryParams._sort = (sortOrderValue == "desc" ? "-" : "") + "priority";
       }
 
+      console.log("queryParams=", queryParams);
       let res = await axios({
         method: "get",
         url: `http://localhost:3000/tickets`,
-        params: queryParams,        
+        params: queryParams,
       });
 
       let data = res?.data;
+      console.log("data=", data);
       setLoading(false);
       setTickets(data);
     } catch (error) {
@@ -87,7 +90,7 @@ const Tickets = () => {
 
       <HStack spacing={8} my={8}>
         <Select
-          placeholder="Sort by Priority"
+          // placeholder="Sort by Priority"
           value={sortOrderValue}
           onChange={(e) => {
             setSortOrderValue(e.target.value);
@@ -96,7 +99,8 @@ const Tickets = () => {
           <option value="asc">Low to High</option>
           <option value="desc">High to Low</option>
         </Select>
-        <Select placeholder="Filter by Status" value={filterValue}
+        <Select
+          value={filterValue}
           onChange={(e) => setFilterValue(e.target.value)}
         >
           <option value="pending">Pending</option>
@@ -109,6 +113,7 @@ const Tickets = () => {
         {tickets?.map((ticket) => (
           <Box key={ticket.id} flexBasis={["100%", "50%", "33.33%"]} p="2">
             <TicketCard
+              id={ticket.id}
               title={ticket.title}
               status={ticket.status}
               priority={ticket.priority}

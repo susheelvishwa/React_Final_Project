@@ -1,40 +1,46 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import LoadingIndicator from "../Components/LoadingIndicator"; 
-import ErrorIndicator from "../Components/ErrorIndicator"; 
 import {
+  Box,
   Button,
   Card,
   CardHeader,
   CardBody,
+  CardFooter,
   Heading,
   Stack,
   StackDivider,
   Text,
-  Box,
+  HStack,
 } from "@chakra-ui/react";
+import ErrorIndicator from "../Components/ErrorIndicator";
+import LoadingIndicator from "../Components/LoadingIndicator";
 
-const TicketView = () => {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [ticket, setTicket] = useState({});
+export default function TicketView() {
   const { id } = useParams();
+  const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(false);
+  const [ticket, setTicket] = useState({});
+  const [err, setErr] = useState(false);
 
   async function fetchAndUpdateData(id) {
     setLoading(true);
-    setError(false);
     try {
-      const res = await axios({
+      console.log(id)
+      let res = await axios({
         method: "get",
         url: `http://localhost:3000/tickets/${id}`,
       });
-      const data = res?.data;
+      
+
+      let data = res?.data;
+      setLoading(false);
       setTicket(data);
     } catch (error) {
-      setError(true);
-    } finally {
       setLoading(false);
+      setErr(true);
     }
   }
 
@@ -42,18 +48,32 @@ const TicketView = () => {
     fetchAndUpdateData(id);
   }, [id]);
 
+  async function deleteTicket() {
+    try {
+      let res = await axios({
+        method: "delete",
+        url: `http://localhost:3000/tickets/${id}`,
+      });
+
+      if (res.status === 200) {
+        navigate("/tickets");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   if (loading) {
     return <LoadingIndicator />;
   }
 
-  if (error) {
+  if (err) {
     return <ErrorIndicator />;
   }
 
-  const { title, status, priority } = ticket;
-
+  const { title, description, assignee, status, priority } = ticket;
   return (
-    <div>
+    <>
       <Card>
         <CardHeader>
           <Heading size="md">{title}</Heading>
@@ -78,15 +98,40 @@ const TicketView = () => {
               </Text>
             </Box>
             <Box>
-              <Button variant="outline" colorScheme="red">
-                View Ticket
-              </Button>
+              <Heading size="xs" textTransform="uppercase">
+                Description
+              </Heading>
+              <Text pt="2" fontSize="sm">
+                {description}
+              </Text>
+            </Box>
+            <Box>
+              <Heading size="xs" textTransform="uppercase">
+                Assignee
+              </Heading>
+              <Text pt="2" fontSize="sm">
+                {assignee}
+              </Text>
             </Box>
           </Stack>
         </CardBody>
+        <CardFooter>
+          <HStack spacing={4}>
+            <Button
+              variant="outline"
+              colorScheme="red"
+              onClick={() => {
+                navigate(`/ticket/edit/${id}`);
+              }}
+            >
+              Edit Ticket
+            </Button>
+            <Button variant="outline" colorScheme="red" onClick={deleteTicket}>
+              Delete Ticket
+            </Button>
+          </HStack>
+        </CardFooter>
       </Card>
-    </div>
+    </>
   );
-};
-
-export default TicketView;
+}

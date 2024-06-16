@@ -1,5 +1,11 @@
+import React from 'react'
+
 const TicketEdit = () => {
-  return <div>TicketEdit</div>;
+  return (
+    <div>
+      
+    </div>
+  )
 }
 
 export default TicketEdit

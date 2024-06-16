@@ -1,14 +1,6 @@
 {
   "tickets": [
     {
-      "id": "1",
-      "title": "Navbar Feature - Logout",
-      "description": "Implement a logout feature in the navbar for user authentication.",
-      "name": "Shivam",
-      "status": "pending",
-      "priority": 5
-    },
-    {
       "id": "2",
       "title": "Dashboard - User Metrics",
       "description": "Create user metrics section in the dashboard.",
@@ -129,19 +121,11 @@
       "priority": 5
     },
     {
-      "id": "fc22",
-      "title": "Real Time notification",
-      "description": "Impliment the real time Notification for iuser activities and updates",
-      "assignee": "Shriya",
-      "status": "progress",
-      "priority": 5
-    },
-    {
-      "id": "9fcc",
-      "title": "Responsive Disign",
-      "description": "MAke a user frandly responsiv mobile application",
-      "assignee": "Ankit",
-      "status": "progress",
+      "id": "b7a6",
+      "title": "",
+      "description": "",
+      "assignee": "",
+      "status": "pending",
       "priority": 1
     }
   ]
