@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,10 +7,11 @@
     "server": "json-server --watch db.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "dependencies": {
+  "dependencies":  {
+    "json-server": "^0.17.1"
+  },
+  "devDependencies": {
     "json-server": "^0.17.1"
   }
 }
