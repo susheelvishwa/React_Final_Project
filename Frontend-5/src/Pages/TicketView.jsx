@@ -28,12 +28,11 @@ export default function TicketView() {
   async function fetchAndUpdateData(id) {
     setLoading(true);
     try {
-      console.log(id)
+      console.log(id);
       let res = await axios({
         method: "get",
-        url: `http://localhost:3000/tickets/${id}`,
+        url: `https://react-final-project-rouge.vercel.app/tickets/${id}`,
       });
-      
 
       let data = res?.data;
       setLoading(false);
@@ -52,7 +51,7 @@ export default function TicketView() {
     try {
       let res = await axios({
         method: "delete",
-        url: `http://localhost:3000/tickets/${id}`,
+        url: `https://react-final-project-rouge.vercel.app/tickets/${id}`,
       });
 
       if (res.status === 200) {

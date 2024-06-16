@@ -19,11 +19,11 @@ const Tickets = () => {
     // try {
     //   console.log(
     //     "url=",
-    //     `http://localhost:3000/tickets?_status=${filterValue}&_sort=priority&_order=${sortOrderValue}`
+    //     `https://react-final-project-rouge.vercel.app/tickets?_status=${filterValue}&_sort=priority&_order=${sortOrderValue}`
     //   );
     //   const res = await axios({
     //     method: "get",
-    //     url: `http://localhost:3000/tickets?_sort=priority&_order=${sortOrderValue}`,
+    //     url: `https://react-final-project-rouge.vercel.app/tickets?_sort=priority&_order=${sortOrderValue}`,
     //   });
     //   const data = res?.data;
     //   console.log("data=", data);
@@ -47,7 +47,7 @@ const Tickets = () => {
       console.log("queryParams=", queryParams);
       let res = await axios({
         method: "get",
-        url: `http://localhost:3000/tickets`,
+        url: `https://react-final-project-rouge.vercel.app/tickets`,
         params: queryParams,
       });
 

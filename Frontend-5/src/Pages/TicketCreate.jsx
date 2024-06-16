@@ -30,7 +30,7 @@ const TicketCreate = () => {
 
       let res = await axios({
         method: "post",
-        url: `http://localhost:3000/tickets`,
+        url: `https://react-final-project-rouge.vercel.app/tickets`,
         data: newTicket,
       });
 
