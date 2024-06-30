@@ -1,23 +1,18 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import LoadingIndicator from "../components/LoadingIndicator";
+import ErrorIndicator from "../components/ErrorIndicator";
 import {
-  Box,
+  Container,
+  Input,
+  Textarea,
+  VStack,
+  Select,
   Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Heading,
-  Stack,
-  StackDivider,
-  Text,
-  HStack,
 } from "@chakra-ui/react";
-import ErrorIndicator from "../Components/ErrorIndicator";
-import LoadingIndicator from "../Components/LoadingIndicator";
 
-export default function TicketView() {
+export default function TicketEdit() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -28,7 +23,6 @@ export default function TicketView() {
   async function fetchAndUpdateData(id) {
     setLoading(true);
     try {
-      console.log(id);
       let res = await axios({
         method: "get",
         url: `https://react-final-project-rouge.vercel.app/tickets/${id}`,
@@ -47,15 +41,24 @@ export default function TicketView() {
     fetchAndUpdateData(id);
   }, [id]);
 
-  async function deleteTicket() {
+  async function editTicket() {
     try {
+      let updatedTicket = {
+        title: ticket.title,
+        description: ticket.description,
+        assignee: ticket.assignee,
+        status: ticket.status,
+        priority: ticket.priority,
+      };
+
       let res = await axios({
-        method: "delete",
+        method: "put",
         url: `https://react-final-project-rouge.vercel.app/tickets/${id}`,
+        data: updatedTicket,
       });
 
       if (res.status === 200) {
-        navigate("/tickets");
+        navigate(`/tickets`);
       }
     } catch (error) {
       console.log(error);
@@ -72,65 +75,92 @@ export default function TicketView() {
 
   const { title, description, assignee, status, priority } = ticket;
   return (
-    <>
-      <Card>
-        <CardHeader>
-          <Heading size="md">{title}</Heading>
-        </CardHeader>
-
-        <CardBody>
-          <Stack divider={<StackDivider />} spacing="4">
-            <Box>
-              <Heading size="xs" textTransform="uppercase">
-                Status
-              </Heading>
-              <Text pt="2" fontSize="sm">
-                {status}
-              </Text>
-            </Box>
-            <Box>
-              <Heading size="xs" textTransform="uppercase">
-                Priority
-              </Heading>
-              <Text pt="2" fontSize="sm">
-                {priority}
-              </Text>
-            </Box>
-            <Box>
-              <Heading size="xs" textTransform="uppercase">
-                Description
-              </Heading>
-              <Text pt="2" fontSize="sm">
-                {description}
-              </Text>
-            </Box>
-            <Box>
-              <Heading size="xs" textTransform="uppercase">
-                Assignee
-              </Heading>
-              <Text pt="2" fontSize="sm">
-                {assignee}
-              </Text>
-            </Box>
-          </Stack>
-        </CardBody>
-        <CardFooter>
-          <HStack spacing={4}>
-            <Button
-              variant="outline"
-              colorScheme="red"
-              onClick={() => {
-                navigate(`/ticket/edit/${id}`);
-              }}
-            >
-              Edit Ticket
-            </Button>
-            <Button variant="outline" colorScheme="red" onClick={deleteTicket}>
-              Delete Ticket
-            </Button>
-          </HStack>
-        </CardFooter>
-      </Card>
-    </>
+    <Container>
+      <VStack spacing={8} my={4}>
+        <Input
+          placeholder="Enter Title"
+          size="lg"
+          value={title}
+          onChange={(e) => {
+            setTicket({
+              ...ticket,
+              title: e.target.value,
+            });
+          }}
+        />
+        <Textarea
+          placeholder="Enter Description"
+          size="lg"
+          value={description}
+          onChange={(e) => {
+            setTicket({
+              ...ticket,
+              description: e.target.value,
+            });
+          }}
+        />
+        <Select
+          placeholder="Assignee"
+          size="lg"
+          value={assignee}
+          onChange={(e) =>
+            setTicket({
+              ...ticket,
+              assignee: e.target.value,
+            })
+          }
+        >
+          <option value="rahul">Rahul</option>
+          <option value="sakshi">Sakshi</option>
+          <option value="varun">Varun</option>
+          <option value="abdul">Abdul</option>
+          <option value="saharan">Saharan</option>
+        </Select>
+        <Select
+          placeholder="Status"
+          size="lg"
+          value={status}
+          onChange={(e) => {
+            setTicket({
+              ...ticket,
+              status: e.target.value,
+            });
+          }}
+        >
+          <option value="pending">Pending</option>
+          <option value="progress">Progress</option>
+          <option value="completed">Completed</option>
+        </Select>
+        <Select
+          placeholder="Priority"
+          size="lg"
+          value={priority}
+          onChange={(e) => {
+            setTicket({
+              ...ticket,
+              priority: Number(e.target.value),
+            });
+          }}
+        >
+          <option value={0}>0</option>
+          <option value={1}>1</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+          <option value={4}>4</option>
+          <option value={5}>5</option>
+          <option value={6}>6</option>
+          <option value={7}>7</option>
+          <option value={8}>8</option>
+          <option value={9}>9</option>
+        </Select>
+        <Button variant="outline" colorScheme="red" onClick={editTicket}>
+          Edit Ticket
+        </Button>
+      </VStack>
+    </Container>
   );
 }
+
+// view ticket page
+
+// create ticket page

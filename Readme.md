@@ -121,9 +121,5 @@ The Tickets Page is designed to allow users to create, view, and manage tickets.
   - Filter tickets by status based on user selection ("Pending", "Progress", "Completed").
   - The ticket display should update dynamically based on the selected sort and filter criteria.
 
-## Notes
-- Ensure the grid layout adjusts responsively according to the screen size.
-- Implement necessary event handlers for sorting and filtering to dynamically rearrange the ticket cards.
-- Maintain consistency in the UI for a smooth user experience across different devices.
 
 

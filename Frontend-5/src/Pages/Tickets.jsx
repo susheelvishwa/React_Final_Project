@@ -2,8 +2,8 @@ import { Button, Flex, Container, Box, HStack, Select } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import ErrorIndicator from "../Components/ErrorIndicator";
-import LoadingIndicator from "../Components/LoadingIndicator";
+import LoadingIndicator from "../components/LoadingIndicator";
+import ErrorIndicator from "../components/ErrorIndicator";
 import TicketCard from "../Components/TicketCard";
 
 const Tickets = () => {
